@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -7,7 +8,8 @@ from rest_framework.response import Response
 
 # 기존 장고 방식
 def hello_world(request):
-    return HttpResponse('Hello_World')
+    return render(request, 'accountapp/temp.html')
+
 
 # DRF 방식
 @api_view()
